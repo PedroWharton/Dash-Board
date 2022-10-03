@@ -1,11 +1,12 @@
 import React from 'react';
 import image from '../assets/images/logo-DH.png';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
+import Products from './Products';
 import LastMovieInDb from './LastMovieInDb';
 import ContentRowMovies from './ContentRowMovies';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
+import Categories from './Categories';
 
 function SideBar(){
     return(
@@ -38,7 +39,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
+                <Link className="nav-link" to="/Products">
                         <i className="fas fa-fw fa-folder"></i>
                         <span>Products</span>
                     </Link>
@@ -46,14 +47,14 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastMovieInDb">
+                    <Link className="nav-link" to="/LastProductInDB">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Users</span></Link>
+                        <span>Last Product In DB</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                    <Link className="nav-link" to="/ContentRowMovies">
+                    <Link className="nav-link" to="/Categories">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Categories</span>
                     </Link>
@@ -81,14 +82,14 @@ function SideBar(){
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/GenresInDb">
-                    <GenresInDb />
+                <Route path="/Products">
+                    <Products />
                 </Route>
-                <Route path="/LastMovieInDb">
+                <Route path="/LastProductInDB">
                     <LastMovieInDb />
                 </Route>
-                <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
+                <Route path="/Categories">
+                    <Categories />
                 </Route>
                 <Route component={NotFound} />
             </Switch>
